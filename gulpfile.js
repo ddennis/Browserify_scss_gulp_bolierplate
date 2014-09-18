@@ -11,47 +11,29 @@
   when you run `gulp`.
 */
 
-var requireDir = require('require-dir');  
-var gulp = require('gulp');  
-
-
-/*gulp.task('default', function (){  
-  requireDir('./gulp/tasks/development', { recurse: true });  
-});*/
-
-
-
-gulp.task('build', function (){  
-  requireDir('./gulp/tasks/build', { recurse: true });
-});
-
-
-
-//var requireDir = require('require-dir');
+var requireDir = require('require-dir');
 
 // Require all tasks in gulp/tasks, including subfolders
-//requireDir('./gulp/tasks', { recurse: true });
+requireDir('./gulp/tasks', { recurse: true });
 
-// The default task (called when you run `gulp` from cli)
-//gulp.task('default', ['browserify']);
-
-
-
-
-
-
-/*
 var gulp         = require('gulp');
 var uglify = require('gulp-uglify');
 var buffer = require('vinyl-buffer');
+var minifyCSS = require('gulp-minify-css');
 
 
 
-gulp.task('ugly', function() {
+gulp.task('ugly', ['css'] ,function() {
     return gulp.src('./build/app.js')
-         //.pipe(source('build/app.js')) // gives streaming vinyl file object
+        //.pipe(source('build/app.js')) // gives streaming vinyl file object
         .pipe(buffer()) // <----- convert from streaming to buffered vinyl file object
         .pipe(uglify()) // now gulp-uglify works
         .pipe(gulp.dest('./build'));
 });
-*/
+
+
+gulp.task('css',  function() {
+    gulp.src('./build/app.css')
+        .pipe(minifyCSS())
+        .pipe(gulp.dest('./build'))
+});

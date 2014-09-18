@@ -1,10 +1,12 @@
 
 
+var tester = require("../lib/ddennis/tester")
+var view = require("./view/viewOne")
 
+console.log ("Main.js " )
 
-module.exports = function (){
-	console.log("asdasd" )
-}
+view.init()
+tester.init()
 
 
 
