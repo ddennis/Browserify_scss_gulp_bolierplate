@@ -1,13 +1,13 @@
 {
-    "name": "Browserify_scss_gulp_bolierplate",
-    "version": "0.0.1",
-    "description": "Browserify boiler plate",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/ddennis/Browserify_scss_gulp_bolierplate.git"
-    },
+  "name": "Browserify_scss_gulp_bolierplate",
+  "version": "0.0.1",
+  "description": "Browserify boiler plate",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ddennis/Browserify_scss_gulp_bolierplate.git"
+  },
   "devDependencies": {
-    "browser-sync": "^1.4.0",
+    "browser-sync": "^1.3.7",
     "browserify": "^5.11.2",
     "browserify-shim": "^3.7.0",
     "gulp": "^3.8.8",
